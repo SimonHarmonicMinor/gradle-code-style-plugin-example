@@ -29,7 +29,7 @@ gradlePlugin {
             displayName = 'Gradle Plugin Code Style Example'
             description = 'Predefined Checkstyle and PMD rules'
             implementationClass = 'io.github.simonharmonicminor.code.style.CodingRulesGradlePluginPlugin'
-            tags.set(['plugin', 'codestyle', 'checkstyle', 'pmd'])
+            tags.set(['codestyle', 'checkstyle', 'pmd'])
         }
     }
 }
