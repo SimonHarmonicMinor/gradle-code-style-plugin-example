@@ -1,0 +1,40 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '1.1.0'
+}
+
+group = 'io.github.simonharmonicminor.code.style'
+sourceCompatibility = '8'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('lombokVersion', '1.18.24')
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+}
+
+gradlePlugin {
+    website = 'https://github.com/SimonHarmonicMinor/gradle-code-style-plugin-example'
+    vcsUrl = 'https://github.com/SimonHarmonicMinor/gradle-code-style-plugin-example'
+    plugins {
+        gradleCodeStylePluginExample {
+            id = 'io.github.simonharmonicminor.code.style'
+            displayName = 'Gradle Plugin Code Style Example'
+            description = 'Predefined Checkstyle and PMD rules'
+            implementationClass = 'io.github.simonharmonicminor.code.style.CodingRulesGradlePluginPlugin'
+            tags.set(['plugin', 'codestyle', 'checkstyle', 'pmd'])
+        }
+    }
+}
+
+tasks.named('test') {
+    // Use JUnit Jupiter for unit tests.
+    useJUnitPlatform()
+}
