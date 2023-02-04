@@ -34,7 +34,7 @@ public class CodingRulesGradlePluginPlugin implements Plugin<Project> {
       pmdExtension.setIgnoreFailures(false);
       pmdExtension.setRuleSets(emptyList());
       pmdExtension.setRuleSetFiles(project.files(
-          FileUtil.copyContentToTempFile("style/pmd.xml", ".pmd_test.xml")
+          FileUtil.copyContentToTempFile("style/pmd.xml", ".pmd.xml")
       ));
     });
 
