@@ -35,6 +35,5 @@ gradlePlugin {
 }
 
 tasks.named('test') {
-    // Use JUnit Jupiter for unit tests.
     useJUnitPlatform()
 }
